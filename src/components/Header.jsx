@@ -18,7 +18,10 @@ function Header({ cities }) {
 }
 
 Header.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  cities: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default Header;
