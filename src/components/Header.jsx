@@ -6,7 +6,7 @@ function Header({ cities }) {
     <div className="flex justify-between items-center">
       {cities.map((city) => (
         <button
-          className="text-white font-medium text-lg"
+          className="text-white font-medium text-md sm:text-lg cursor-pointer"
           key={city.id}
           type="button"
         >
