@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Header({ cities }) {
   return (
-    <div className="flex justify-around items-center">
+    <div className="flex justify-between items-center">
       {cities.map((city) => (
         <button
           className="text-white font-medium text-lg"
