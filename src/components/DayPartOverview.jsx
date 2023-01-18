@@ -7,7 +7,7 @@ import DailyContentLabel from './DailyContentLabel';
 
 function DayPartOverview() {
   return (
-    <div className="flex justify-center items-center text-white gap-x-2">
+    <div className="flex justify-center items-center text-white sm:gap-x-2 gap-x-1">
       <DailyContentLabel icon={<UilSun />} label="Rise: " content="7:16 AM" />
       <span className="font-light">|</span>
       <DailyContentLabel icon={<UilSunset />} label="Set: " content="4:55 PM" />

@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <div className="bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
-        <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-fit mx-auto py-8 px-4 md:px-8">
+        <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-screen mx-auto py-8 px-4 md:px-8">
           <Header cities={cities} />
           <Search />
           <Datetime />
