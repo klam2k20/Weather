@@ -5,6 +5,7 @@ import Search from './components/Search';
 import Datetime from './components/Datetime';
 import Location from './components/Location';
 import DailyContent from './components/DailyContent';
+import ForcastOverview from './components/ForcastOverview';
 
 const cities = [
   {
@@ -32,12 +33,14 @@ const cities = [
 function App() {
   return (
     <div className="App">
-      <div className="max-w-screen-md h-fit mx-auto py-4 px-32 bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
+      <div className="max-w-screen-md h-fit mx-auto py-8 px-32 bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
         <Header cities={cities} />
         <Search />
         <Datetime />
         <Location />
         <DailyContent />
+        <ForcastOverview title="Hourly Forcast" />
+        <ForcastOverview title="Daily Forcast" />
       </div>
     </div>
   );
