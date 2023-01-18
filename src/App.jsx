@@ -33,7 +33,7 @@ const cities = [
 function App() {
   return (
     <div className="App">
-      <div className="max-w-screen-md h-fit mx-auto py-8 px-32 bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
+      <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-fit mx-auto py-8 md:px-32 px-4 bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
         <Header cities={cities} />
         <Search />
         <Datetime />

@@ -5,7 +5,7 @@ import ForcastItem from './ForcastItem';
 
 function ForcastOverview({ title }) {
   return (
-    <div className="flex flex-col text-white gap-y-2 mt-6">
+    <div className="flex flex-col text-white gap-y-2">
       <span className="flex justify-start text-xl font-medium uppercase">{title}</span>
       <hr />
       <div className="flex items-center justify-between">

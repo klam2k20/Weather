@@ -4,7 +4,7 @@ import DailyPartOverview from './DayPartOverview';
 
 function DailyContent() {
   return (
-    <div className="flex flex-col my-6 gap-y-3">
+    <div className="flex flex-col gap-y-3">
       <span className="text-xl text-cyan-300">Clouds</span>
       <DailyContentOverview />
       <DailyPartOverview />
