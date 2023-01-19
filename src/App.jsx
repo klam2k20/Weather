@@ -36,7 +36,6 @@ function App() {
   };
   /**
      * TODO: Update input
-     *  TODO: Using location
      *  TODO: Update selecting units
      * TODO: Add toasts
     */

@@ -11,6 +11,17 @@ function Search({ handleSearch }) {
     setSearch('');
   };
 
+  const handleLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      handleSearch({
+        lat,
+        lon,
+      });
+    });
+  };
+
   return (
     <div className="flex justify-center">
       <form className="flex justify-center items-center w-3/4 gap-x-4" onSubmit={submitForm}>
@@ -24,8 +35,7 @@ function Search({ handleSearch }) {
         <button type="submit">
           <UilSearch className="text-white cursor-pointer transition ease-out hover:scale-125" />
         </button>
-
-        <UilLocationPoint className="text-white cursor-pointer transition ease-out hover:scale-125" />
+        <UilLocationPoint className="text-white cursor-pointer transition ease-out hover:scale-125" onClick={handleLocation} />
       </form>
       <div className="flex justify-end items-center w-1/4 gap-x-2">
         <button
