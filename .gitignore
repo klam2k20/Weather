@@ -25,3 +25,6 @@ yarn-error.log*
 # Configuration
 .vscode
 .eslintrc.json
+
+# API Keys
+src/.config.js
