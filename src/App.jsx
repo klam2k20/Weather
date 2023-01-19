@@ -19,6 +19,7 @@ function App() {
     getWeatherData({ ...query, units })
       .then((data) => {
         setWeatherData(data);
+        console.log(data);
       });
   }, [query, units]);
 
@@ -28,11 +29,16 @@ function App() {
         <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-screen mx-auto py-8 px-4 md:px-8">
           <Header />
           <Search />
-          <Datetime content={weatherData} />
-          <Location content={weatherData} />
-          <DailyContent content={weatherData} />
-          <ForcastOverview title="Hourly Forcast" content={weatherData} />
-          <ForcastOverview title="Daily Forcast" content={weatherData} />
+          {weatherData && (
+          <>
+            <Datetime content={weatherData} />
+            <Location content={weatherData} />
+            <DailyContent content={weatherData} units={units} />
+            <ForcastOverview title="Hourly Forcast" forcast={weatherData.hourlyForcast} />
+            <ForcastOverview title="Daily Forcast" forcast={weatherData.dailyForcast} />
+          </>
+          )}
+
         </div>
 
       </div>

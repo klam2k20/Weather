@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { DateTime } from 'luxon';
 
 import config from '../.config';
@@ -17,6 +16,8 @@ const getLocation = (data) => {
   };
 };
 
+const getIcon = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`;
+
 const formatEpochTime = (
   epochTime,
   timezone,
@@ -30,7 +31,10 @@ const formatWeatherData = (data) => {
   const {
     dt, sunrise, sunset, temp, feels_like, humidity, wind_speed, weather,
   } = current;
-  const dateTime = formatEpochTime(dt, timezone, "cccc, LLL dd, yyyy '| Local Time: ' t");
+  const date = formatEpochTime(dt, timezone, 'cccc, LLL dd, yyyy');
+  const time = formatEpochTime(dt, timezone, 't');
+  const sunriseTime = formatEpochTime(sunrise, timezone, 't');
+  const sunsetTime = formatEpochTime(sunset, timezone, 't');
   const { main, icon } = weather[0];
   const hourlyForcast = hourly.slice(1, 6).map((hour) => ({
     time: formatEpochTime(hour.dt, timezone, 't'),
@@ -45,15 +49,16 @@ const formatWeatherData = (data) => {
   }));
   return {
     timezone,
-    dateTime,
+    date,
+    time,
     main,
     icon,
     temp,
     feels_like,
     humidity,
     wind_speed,
-    sunrise,
-    sunset,
+    sunriseTime,
+    sunsetTime,
     min,
     max,
     hourlyForcast,
@@ -82,3 +87,4 @@ const getWeatherData = async (searchParams) => {
 };
 
 export default getWeatherData;
+export { getIcon };
