@@ -1,7 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function Header({ cities }) {
+const cities = [
+  {
+    id: 1,
+    title: 'London',
+  },
+  {
+    id: 2,
+    title: 'Sydney',
+  },
+  {
+    id: 3,
+    title: 'Tokyo',
+  },
+  {
+    id: 4,
+    title: 'Toronto',
+  },
+  {
+    id: 5,
+    title: 'Paris',
+  },
+];
+function Header() {
   return (
     <div className="flex justify-between items-center">
       {cities.map((city) => (
@@ -16,12 +37,5 @@ function Header({ cities }) {
     </div>
   );
 }
-
-Header.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-  })).isRequired,
-};
 
 export default Header;
