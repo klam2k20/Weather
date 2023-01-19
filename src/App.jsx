@@ -12,7 +12,7 @@ function App() {
     lat: 40.650002,
     lon: -73.949997,
   });
-  const [units] = useState('imperial');
+  const [units, setUnits] = useState('imperial');
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
@@ -35,9 +35,7 @@ function App() {
     return coolBackground;
   };
   /**
-     * TODO: Update background gradient depending on temp
      * TODO: Update input
-     *  TODO: Input on icon click and on enter
      *  TODO: Using location
      *  TODO: Update selecting units
      * TODO: Add toasts
@@ -47,7 +45,7 @@ function App() {
       <div className={`${backgroundColor()} shadow-xl shadow-grey-500`}>
         <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-screen mx-auto py-8 px-4 md:px-8">
           <Header handleClick={setQuery} />
-          <Search />
+          <Search handleSearch={setQuery} handleUnits={setUnits} />
           {weatherData && (
           <>
             <Datetime content={weatherData} />

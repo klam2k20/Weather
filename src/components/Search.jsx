@@ -1,18 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons';
 
-function Search() {
+function Search({ handleSearch }) {
+  const [search, setSearch] = React.useState('');
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    handleSearch({ q: search });
+    setSearch('');
+  };
+
   return (
     <div className="flex justify-center">
-      <div className="flex justify-center items-center w-3/4 gap-x-4 ">
+      <form className="flex justify-center items-center w-3/4 gap-x-4" onSubmit={submitForm}>
         <input
           className="text-xl w-full font-light p-2 capitalize focus:outline-none shadow-xl"
           type="text"
           placeholder="Search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <UilSearch className="text-white cursor-pointer transition ease-out hover:scale-125" />
+        <button type="submit">
+          <UilSearch className="text-white cursor-pointer transition ease-out hover:scale-125" />
+        </button>
+
         <UilLocationPoint className="text-white cursor-pointer transition ease-out hover:scale-125" />
-      </div>
+      </form>
       <div className="flex justify-end items-center w-1/4 gap-x-2">
         <button
           className="text-white cursor-pointer text-xl font-light transition ease-out hover:scale-125"
@@ -31,5 +45,9 @@ function Search() {
     </div>
   );
 }
+
+Search.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+};
 
 export default Search;
