@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons';
 
-function Search({ handleSearch }) {
+function Search({ handleQuery, units, handleUnits }) {
   const [search, setSearch] = React.useState('');
 
   const submitForm = (e) => {
     e.preventDefault();
-    handleSearch({ q: search });
+    handleQuery({ q: search });
     setSearch('');
   };
 
@@ -15,11 +15,18 @@ function Search({ handleSearch }) {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
-      handleSearch({
+      handleQuery({
         lat,
         lon,
       });
     });
+  };
+
+  const updateUnits = (e) => {
+    if (e.target.value !== units) {
+      const newUnits = e.target.value === 'metric' ? 'metric' : 'imperial';
+      handleUnits(newUnits);
+    }
   };
 
   return (
@@ -41,6 +48,8 @@ function Search({ handleSearch }) {
         <button
           className="text-white cursor-pointer text-xl font-light transition ease-out hover:scale-125"
           type="button"
+          value="metric"
+          onClick={updateUnits}
         >
           °C
         </button>
@@ -48,6 +57,8 @@ function Search({ handleSearch }) {
         <button
           className="text-white cursor-pointer text-xl font-light transition ease-out hover:scale-125"
           type="button"
+          value="imperial"
+          onClick={updateUnits}
         >
           °F
         </button>
@@ -57,7 +68,9 @@ function Search({ handleSearch }) {
 }
 
 Search.propTypes = {
-  handleSearch: PropTypes.func.isRequired,
+  handleQuery: PropTypes.func.isRequired,
+  units: PropTypes.string.isRequired,
+  handleUnits: PropTypes.func.isRequired,
 };
 
 export default Search;

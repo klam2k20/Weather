@@ -35,8 +35,6 @@ function App() {
     return coolBackground;
   };
   /**
-     * TODO: Update input
-     *  TODO: Update selecting units
      * TODO: Add toasts
     */
   return (
@@ -44,7 +42,7 @@ function App() {
       <div className={`${backgroundColor()} shadow-xl shadow-grey-500`}>
         <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-screen mx-auto py-8 px-4 md:px-8">
           <Header handleClick={setQuery} />
-          <Search handleSearch={setQuery} handleUnits={setUnits} />
+          <Search handleQuery={setQuery} units={units} handleUnits={setUnits} />
           {weatherData && (
           <>
             <Datetime content={weatherData} />
