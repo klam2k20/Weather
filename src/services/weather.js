@@ -66,6 +66,7 @@ const formatWeatherData = (data) => {
   };
 };
 
+// TODO: Add status code check if its 429 api limit reached for the day
 const getData = (type, searchParams) => {
   const path = type === 'weather' ? '2.5/weather' : '3.0/onecall';
   const url = new URL(BASE_URL + path);
