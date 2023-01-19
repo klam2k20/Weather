@@ -23,18 +23,28 @@ function App() {
       });
   }, [query, units]);
 
-  return (
+  const backgroundColor = () => {
+    const coolBackground = 'bg-gradient-to-br from-cyan-500 to-blue-500';
+    const hotBackground = 'bg-gradient-to-br from-orange-500 to-red-500';
+    if (weatherData) {
+      if (units === 'imperial') {
+        return weatherData.temp > 60 ? hotBackground : coolBackground;
+      }
+      return weatherData.temp > 20 ? hotBackground : coolBackground;
+    }
+    return coolBackground;
+  };
   /**
      * TODO: Update background gradient depending on temp
      * TODO: Update input
      *  TODO: Input on icon click and on enter
      *  TODO: Using location
-     * TODO: Update selecting units
+     *  TODO: Update selecting units
      * TODO: Add toasts
     */
-
+  return (
     <div className="App">
-      <div className="bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
+      <div className={`${backgroundColor()} shadow-xl shadow-grey-500`}>
         <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-screen mx-auto py-8 px-4 md:px-8">
           <Header handleClick={setQuery} />
           <Search />

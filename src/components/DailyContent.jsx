@@ -10,7 +10,7 @@ function DailyContent({
 }) {
   return (
     <div className="flex flex-col gap-y-3">
-      <span className="text-xl text-cyan-300 text-center">{main}</span>
+      <span className="text-xl text-center text-white">{main}</span>
       <DailyContentOverview content={{
         icon, temp, feels_like, humidity, wind_speed, units,
       }}
