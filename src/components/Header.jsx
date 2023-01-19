@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const cities = [
   {
@@ -7,7 +8,7 @@ const cities = [
   },
   {
     id: 2,
-    title: 'Sydney',
+    title: 'Dubai',
   },
   {
     id: 3,
@@ -15,14 +16,14 @@ const cities = [
   },
   {
     id: 4,
-    title: 'Toronto',
+    title: 'Bangkok',
   },
   {
     id: 5,
     title: 'Paris',
   },
 ];
-function Header() {
+function Header({ handleClick }) {
   return (
     <div className="flex justify-between items-center">
       {cities.map((city) => (
@@ -30,6 +31,7 @@ function Header() {
           className="text-white font-medium text-md sm:text-lg cursor-pointer"
           key={city.id}
           type="button"
+          onClick={() => handleClick({ q: city.title })}
         >
           {city.title}
         </button>
@@ -38,4 +40,7 @@ function Header() {
   );
 }
 
+Header.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 export default Header;

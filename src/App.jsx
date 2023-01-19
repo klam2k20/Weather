@@ -8,7 +8,7 @@ import ForcastOverview from './components/ForcastOverview';
 import getWeatherData from './services/weather';
 
 function App() {
-  const [query] = useState({
+  const [query, setQuery] = useState({
     lat: 40.650002,
     lon: -73.949997,
   });
@@ -29,14 +29,14 @@ function App() {
      * TODO: Update input
      *  TODO: Input on icon click and on enter
      *  TODO: Using location
-     * TODO: Update select buttons
      * TODO: Update selecting units
+     * TODO: Add toasts
     */
 
     <div className="App">
       <div className="bg-gradient-to-br from-cyan-500 to-blue-500 shadow-xl shadow-grey-500">
         <div className="flex flex-col gap-y-6 xl:max-w-screen-lg h-screen mx-auto py-8 px-4 md:px-8">
-          <Header />
+          <Header handleClick={setQuery} />
           <Search />
           {weatherData && (
           <>
