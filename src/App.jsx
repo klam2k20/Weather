@@ -28,7 +28,7 @@ function App() {
     toast.promise(promise, {
       loading: `Fetching Weather For ${msg}`,
       success: `Successfully Fetched Weather For ${msg}`,
-      error: `Failed to Fetch Weather for ${msg}`,
+      error: `Failed to Fetch Weather For ${msg}.`,
     });
   }, [query, units]);
 
@@ -41,10 +41,7 @@ function App() {
     }
     return coolBackground;
   };
-  /**
-     * TODO: Add error handling
-     * TODO: Try to fix the lag after updating units
-    */
+
   return (
     <div className="App">
       <div className={`${backgroundColor()} shadow-xl shadow-grey-500`}>

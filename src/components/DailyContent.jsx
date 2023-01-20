@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import DailyContentOverview from './DailyContentOverview';
 import DailyPartOverview from './DayPartOverview';
 

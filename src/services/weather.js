@@ -66,12 +66,12 @@ const formatWeatherData = (data) => {
   };
 };
 
-// TODO: Add status code check if its 429 api limit reached for the day
-const getData = (type, searchParams) => {
+const getData = async (type, searchParams) => {
   const path = type === 'weather' ? '2.5/weather' : '3.0/onecall';
   const url = new URL(BASE_URL + path);
   url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
-  return fetch(url).then((data) => data.json());
+  const data = await fetch(url).then((response) => response.json());
+  return data;
 };
 
 const getWeatherData = async (searchParams) => {

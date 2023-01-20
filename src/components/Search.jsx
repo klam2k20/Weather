@@ -8,7 +8,7 @@ function Search({ handleQuery, units, handleUnits }) {
 
   const submitForm = (e) => {
     e.preventDefault();
-    handleQuery({ q: search });
+    handleQuery({ q: search.charAt(0).toUpperCase() + search.slice(1) });
     setSearch('');
   };
 
