@@ -11,10 +11,7 @@ sharing my OpenWeather API key. I have instead included a gif demoing the projec
 
 The application was designed to be responsive for various device sizes as seen below:
 
-- Small Mobile Devices:
-  <br>
-  <img src="imgs/Weather-xs.png">
-- Large Mobile Devices:
+- Mobile Devices:
   <br>
   <img src="imgs/Weather-sm.png">
 - Tablet Devices:
