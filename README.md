@@ -10,7 +10,7 @@ both metric and imperial units. Unforunately, I will not host this project on Gi
 sharing my OpenWeather API key. I have instead included a gif demoing the project above.
 
 The application was designed to be responsive for various device sizes as seen below: <br> <br>
-<img src="imgs/Weather-sm.png" height=500> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="imgs/Weather-sm.png" height=500> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 <img src="imgs/Weather-md.png" height=500>
 <img src="imgs/Weather-lg.png" height=500 width=800>
 
