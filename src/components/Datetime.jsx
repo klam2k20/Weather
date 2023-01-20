@@ -5,7 +5,7 @@ function Datetime({ content: { date, time } }) {
   return (
     <div className="flex justify-center flex-wrap gap-x-1 text-white font-extralight text-xl">
       <span>{date}</span>
-      <span>{`Local time: ${time}`}</span>
+      <span>{`Local Time: ${time}`}</span>
     </div>
   );
 }
