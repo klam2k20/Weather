@@ -8,6 +8,21 @@ This is a responsive Weather App created with ReactJS. The application utilizes 
 provide hourly and daily forcast for either a specified city or the user's current location. It supports
 both metric and imperial units.
 
+The application was designed to be responsive for various device sizes as seen below:
+
+- Small Mobile Devices:
+  <br>
+  <img src="imgs/Weather-xs.png">
+- Large Mobile Devices:
+  <br>
+  <img src="imgs/Weather-sm.png">
+- Tablet Devices:
+  <br>
+  <img src="imgs/Weather-md.png">
+- Laptop and Desktop Devices:
+  <br>
+  <img src="imgs/Weather-lg.png">
+
 ## Getting Started
 
 ### Prerequisites
