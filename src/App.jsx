@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+
 import Header from './components/Header';
 import Search from './components/Search';
 import Datetime from './components/Datetime';
@@ -16,26 +18,32 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    getWeatherData({ ...query, units })
-      .then((data) => {
+    const msg = query.q ? query.q : 'Current Location';
+    const fetchData = async () => {
+      await getWeatherData({ ...query, units }).then((data) => {
         setWeatherData(data);
-        console.log(data);
       });
+    };
+    const promise = fetchData();
+    toast.promise(promise, {
+      loading: `Fetching Weather For ${msg}`,
+      success: `Successfully Fetched Weather For ${msg}`,
+      error: `Failed to Fetch Weather for ${msg}`,
+    });
   }, [query, units]);
 
   const backgroundColor = () => {
     const coolBackground = 'bg-gradient-to-br from-cyan-500 to-blue-500';
     const hotBackground = 'bg-gradient-to-br from-orange-500 to-red-500';
+    const threshold = units === 'imperial' ? 60 : 20;
     if (weatherData) {
-      if (units === 'imperial') {
-        return weatherData.temp > 60 ? hotBackground : coolBackground;
-      }
-      return weatherData.temp > 20 ? hotBackground : coolBackground;
+      return weatherData.temp > threshold ? hotBackground : coolBackground;
     }
     return coolBackground;
   };
   /**
-     * TODO: Add toasts
+     * TODO: Add error handling
+     * TODO: Try to fix the lag after updating units
     */
   return (
     <div className="App">
@@ -52,10 +60,16 @@ function App() {
             <ForcastOverview title="Daily Forcast" forcast={weatherData.dailyForcast} />
           </>
           )}
-
         </div>
-
       </div>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            fontSize: '1.4rem',
+          },
+        }}
+      />
     </div>
   );
 }

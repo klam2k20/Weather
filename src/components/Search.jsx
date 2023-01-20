@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons';
+import toast from 'react-hot-toast';
 
 function Search({ handleQuery, units, handleUnits }) {
   const [search, setSearch] = React.useState('');
@@ -12,9 +13,11 @@ function Search({ handleQuery, units, handleUnits }) {
   };
 
   const handleLocation = () => {
+    const toastId = toast.loading('Fetching Current Location...');
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
+      toast.success('Current Location Found!', { id: toastId });
       handleQuery({
         lat,
         lon,
