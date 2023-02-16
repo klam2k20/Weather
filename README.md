@@ -6,8 +6,7 @@
 
 This is a responsive Weather App created with ReactJS. The application utilizes the OpenWeather API to
 provide hourly and daily forcast for either a specified city or the user's current location. It supports
-both metric and imperial units. Unforunately, I will not host this project on GitHub Pages to prevent
-sharing my OpenWeather API key. I have instead included a gif demoing the project above.
+both metric and imperial units.
 
 The application was designed to be responsive for various device sizes as seen below: <br> <br>
 <img src="imgs/Weather-sm.png" height=500> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
