@@ -1,52 +1,72 @@
 <p align="center">
-    <img src="imgs/demo.gif">
+    <img src="imgs/demo.gif" height="500">
 </p>
 
 ## Overview
 
-This is a responsive Weather App created with ReactJS. The application utilizes the OpenWeather API to
-provide hourly and daily forcast for either a specified city or the user's current location. It supports
-both metric and imperial units. Unforunately, I will not host this project on GitHub Pages to prevent
-sharing my OpenWeather API key. I have instead included a gif demoing the project above.
+This is a responsive Weather App. It utilizes the OpenWeather API to provide hourly and daily
+forcast for either a specified city or the user's current location. It supports both metric and imperial units.
 
-The application was designed to be responsive for various device sizes as seen below: <br> <br>
-<img src="imgs/Weather-sm.png" height=500> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-<img src="imgs/Weather-md.png" height=500>
-<img src="imgs/Weather-lg.png" height=500 width=800>
+## Technology
+
+- <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+- <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
+
+## Features
+
+- Responsive Design
+<p align="center">
+    <img src="imgs/responsive.gif" height="400">
+</p>
+
+- Supports Metric and Imperial Units
+<p align="center">
+    <img src="imgs/metric.gif" height="400">
+</p>
+
+- Provides Forcast for User's Location
+<p align="center">
+    <img src="imgs/location.gif" height="400">
+</p>
+
+- Edit Group Conversation Participants
+<p align="center">
+    <img src="imgs/edit-conversation.gif" height="400">
+</p>
+
+- Leave Group Conversation and Delete Conversation
+<p align="center">
+    <img src="imgs/delete-conversation.gif" height="400">
+</p>
+
+- Profile Images
+<p align="center">
+    <img src="imgs/profile.gif" height="400">
+</p>
 
 ## Getting Started
 
 ### Prerequisites
 
-- yarn
-  ```sh
-  npm install -g yarn
-  ```
+- yarn/npm
+- Sign up for One Call API 3.0 Subscription
 
-### Installation
+#### Backend Installation
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/klam2k20/Weather.git
-   ```
-2. `cd` to project folder
-3. Install yarn packages
-   ```sh
-   yarn install
-   ```
-4. Sign up for One Call API 3.0 subscription
-5. Obtain an API key
-6. `cd src`
-7. Create `.config.js` with your API key
+```sh
+# Clone the repo
+git clone https://github.com/klam2k20/Weather.git
 
-   ```js
-   const config = {
-   	WEATHER_API_KEY: { API_KEY },
-   };
-   export default config;
-   ```
+# Create .config.js
+cd Weather/src
+const config = {
+	WEATHER_API_KEY: { API_KEY },
+};
+export default config;
 
-8. Start React project
-   ```sh
-   yarn start
-   ```
+# Install dependencies
+yarn install
+
+# Start the application
+yarn start
+```
