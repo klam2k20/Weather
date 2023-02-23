@@ -36,7 +36,7 @@ forcast for either a specified city or the user's current location. It supports 
 - yarn/npm
 - Sign up for One Call API 3.0 Subscription
 
-#### Installation
+### Installation
 
 ```sh
 # Clone the repo
