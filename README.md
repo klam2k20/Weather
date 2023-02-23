@@ -29,21 +29,6 @@ forcast for either a specified city or the user's current location. It supports 
     <img src="imgs/location.gif" height="400">
 </p>
 
-- Edit Group Conversation Participants
-<p align="center">
-    <img src="imgs/edit-conversation.gif" height="400">
-</p>
-
-- Leave Group Conversation and Delete Conversation
-<p align="center">
-    <img src="imgs/delete-conversation.gif" height="400">
-</p>
-
-- Profile Images
-<p align="center">
-    <img src="imgs/profile.gif" height="400">
-</p>
-
 ## Getting Started
 
 ### Prerequisites
